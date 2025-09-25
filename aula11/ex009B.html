@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font: normal 16px arial;
+      }
+      input.butao {
+        margin-top: 5px;
+      }
+      #res {
+        margin: 10px 0 0 10px;
+      }
+    </style>
+    <title>País</title>
+  </head>
+  <body>
+    <h1>Em Qual País Você Mora?</h1>
+    Coloque o Seu País: <input type="text" name="paistxt" id="paistxt" /> <br />
+    <input class="butao" type="button" value="Verificar" onclick="verpais()" />
+    <div id="res"></div>
+
+    <script>
+      function verpais() {
+        var pais = window.document.getElementById("paistxt");
+        var res = window.document.getElementById("res");
+        var p = pais.value.trim();
+        if (p.toLowerCase() === "brasil") {
+          res.innerHTML = `Você mora no país ${p}. Você é Brasileiro!`;
+        } else {
+          res.innerHTML = `Você mora no país ${p}. Você é Estrangeiro!`;
+        }
+      }
+    </script>
+  </body>
+</html>
